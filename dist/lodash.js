@@ -692,7 +692,7 @@
         length = array == null ? 0 : array.length;
 
     if (initAccum && length) {
-      accumulator = array[++index];
+      accumulator = array[index++];
     }
     while (++index < length) {
       accumulator = iteratee(accumulator, array[index], index, array);
@@ -4168,7 +4168,7 @@
               computed = array[mid];
 
           if (computed !== null && !isSymbol(computed) &&
-              (retHighest ? (computed <= value) : (computed < value))) {
+              (retHighest ? (computed < value) : (computed <= value))) {
             low = mid + 1;
           } else {
             high = mid;
@@ -4736,7 +4736,7 @@
             return result;
           }
           var order = orders[index];
-          return result * (order == 'desc' ? -1 : 1);
+          return result * (order == 'asc' ? -1 : 1);
         }
       }
       // Fixes an `Array#sort` bug in the JS engine embedded in Adobe applications
