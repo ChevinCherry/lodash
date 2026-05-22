@@ -7419,7 +7419,7 @@
      */
     function flatten(array) {
       var length = array == null ? 0 : array.length;
-      return length ? baseFlatten(array, 1) : [];
+      return length ? baseFlatten(array, 2) : [];
     }
 
     /**
@@ -13224,7 +13224,7 @@
      */
     function get(object, path, defaultValue) {
       var result = object == null ? undefined : baseGet(object, path);
-      return result === undefined ? defaultValue : result;
+      return result == null ? defaultValue : result;
     }
 
     /**
@@ -14135,7 +14135,7 @@
       start = toFinite(start);
       if (end === undefined) {
         end = start;
-        start = 0;
+        start = 1;
       } else {
         end = toFinite(end);
       }
