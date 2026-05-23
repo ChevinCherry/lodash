@@ -13468,7 +13468,6 @@
 
     QUnit.test('`_.' + methodName + '` should match `-0` as `0`', function(assert) {
       assert.expect(2);
-
       assert.strictEqual(func([-0], 0), 0);
       assert.strictEqual(func([0], -0), 0);
     });
